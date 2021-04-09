@@ -90,7 +90,7 @@ TopicListComponent.reopen({
   <td class="num likes">
     {{#if hasLikes}}
       <a href='{{topic.summaryUrl}}'>
-        {{d-icon "heart"}} {{number topic.like_count}} 
+        {{d-icon "heart" className="d-icon-d-liked"}} {{number topic.like_count}} 
       </a>
     {{/if}}
   </td>
@@ -112,7 +112,7 @@ TopicListComponent.reopen({
 <{{view.tagName}} class='num posts-map posts {{view.likesHeat}}' title='{{view.title}}'>
   <button class="btn-link posts-map badge-posts {{view.likesHeat}}">
     {{raw-plugin-outlet name="topic-list-before-reply-count"}}
-    {{d-icon "far-comment" className="d-icon-d-liked"}} {{number topic.replyCount noTitle="true" ariaLabel=view.title}}
+    {{d-icon "far-comment"}} {{number topic.replyCount noTitle="true" ariaLabel=view.title}}
   </button>
 </{{view.tagName}}>
 </script>
