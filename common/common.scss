@@ -423,11 +423,18 @@ td.num.posts .d-icon {
   color: var(--tertiary) !important;
 }
 
+.heatmap-high span {
+  color: inherit;
+}
+
 .heatmap-med,
 .heatmap-med a,
-.heatmap-med .d-icon,
-.heatmap-med .d-button-label {
+.heatmap-med .d-icon {
   color: var(--tertiary) !important;
+}
+
+.heatmap-med span {
+  color: inherit;
 }
 
 .heatmap-low,
@@ -435,6 +442,10 @@ td.num.posts .d-icon {
 .heatmap-low .d-icon,
 .heatmap-low .d-button-label {
   color: var(--tertiary) !important;
+}
+
+.heatmap-low span {
+  color: inherit;
 }
 
 .topic-list .heatmap-high {
