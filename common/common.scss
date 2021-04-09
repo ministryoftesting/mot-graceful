@@ -386,7 +386,11 @@ td.num.posts .d-icon {
 }
 
 .poster-image {
-  display: inline-block;
+  width: 33px;
+  
+  img {
+    width: 100%;
+  } 
 }
 
 // Plugins
