@@ -422,7 +422,7 @@ td.num.posts .d-icon {
   margin-bottom: 2rem;
 }
 
-header.d-header {
+div.d-header {
   background-color: transparent;
   box-shadow: none !important;
   max-width: 1200px;
@@ -438,13 +438,13 @@ header.d-header .wrap {
 }
 
 @media screen and (max-width: 1120px) {
-    header.d-header {
+    .d-header-wrap {
         width:80%
     }
 }
 
 @media screen and (max-width: 1075px) {
-    header.d-header {
+    .d-header-wrap {
         width:85%
     }
 }
