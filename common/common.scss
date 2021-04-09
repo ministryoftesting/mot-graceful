@@ -13,10 +13,7 @@
   height: 100vh;
   width: 100vw;
   z-index: -1;
-  background-color: var(
-    --gf-primary-very-low-or-primary-low,
-    $primary-very-low
-  );
+  background-color: #eef0f1;
   @if $no-background-image == "false" {
     @if $background-image != "default" {
       // Thanks @tmoko!
