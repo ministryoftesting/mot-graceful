@@ -386,11 +386,16 @@ td.num.posts .d-icon {
 }
 
 .poster-image {
+  float: left;
   width: 33px;
   
   img {
     width: 100%;
   } 
+}
+
+.topic-details {
+  float: right;
 }
 
 // Plugins
