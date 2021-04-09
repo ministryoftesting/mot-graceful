@@ -416,39 +416,6 @@ td.num.posts .d-icon {
   border-radius: 0;
 }
 
-//Club Nav Bar
-.d-header-wrap {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-div.d-header-wrap {
-  background-color: transparent;
-  box-shadow: none !important;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-right: 3em;
-  padding-left: 3em;
-}
-
-header.d-header .wrap {
-  width: 100%;
-  background-color: white;
-}
-
-@media screen and (max-width: 1120px) {
-    .d-header-wrap {
-        width:80%;
-    }
-}
-
-@media screen and (max-width: 1075px) {
-    .d-header-wrap {
-        width:85%;
-    }
-}
-
 // Custom header
 .b-header {
   width: 100%;
