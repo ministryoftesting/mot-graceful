@@ -180,14 +180,6 @@ header.d-header {
 
 // Main category nav
 
-.list-controls .combo-box .combo-box-header {
-  background: transparent;
-  @media screen and (min-width: 775px) {
-    font-size: 1.1487em;
-  }
-  border-color: transparent;
-}
-
 .select-kit.combo-box.category-drop .category-drop-header,
 .select-kit.combo-box.tag-drop .tag-drop-header {
   border-radius: 4px;
@@ -420,13 +412,13 @@ td.num.posts .d-icon {
   font-weight: bold;
 }
 
-.category-drop-header {
-  border: 1px solid var(--gf-primary-low-or-low-mid);
-}
-
-.tag-drop-header {
-  border: 1px solid var(--gf-primary-low-or-low-mid);
-}
+// .category-drop-header {
+//   border: 1px solid var(--gf-primary-low-or-low-mid);
+// }
+// 
+// .tag-drop-header {
+//   border: 1px solid var(--gf-primary-low-or-low-mid);
+// }
 
 // Plugins
 
