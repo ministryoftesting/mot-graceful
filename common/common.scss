@@ -385,12 +385,13 @@ td.num.posts .d-icon {
   color: var(--tertiary);
 }
 
+.topic-wrapper {
+  display: flex;
+}
+
 .poster-image {
   float: left;
-  width: 33px;
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%;
+  align-self: center;
   
   img {
     width: 100%;
@@ -400,8 +401,7 @@ td.num.posts .d-icon {
 
 .topic-details {
   float: left;
-  display: inline-block;
-  vertical-align: middle;
+  align-self: center;
   margin-left: 1rem;
 }
 

@@ -45,38 +45,40 @@ TopicListComponent.reopen({
   at the end of the link, preventing it from line wrapping onto its own line.
 --}}
 <td class='main-link clearfix' colspan="1" role="rowheader">
-  <div class= "poster-image">
-    <a href="{{topic.posters.[0].user.userPath}}" data-user-card="{{topic.posters.[0].user.username}}">{{avatar topic.posters.[0].user imageSize='small'}}</a>
-    {{~raw-plugin-outlet name="topic-list-before-link"}}
-  </div>
-  <div class="topic-details">
-    <span class='link-top-line'>
-      {{~raw-plugin-outlet name="topic-list-before-status"}}
-      {{~raw "topic-status" topic=topic}}
-      {{~topic-link topic class="raw-link raw-topic-link"}}
-      {{~#if topic.featured_link}}
-      {{~topic-featured-link topic}}
-      {{~/if}}
-      {{~raw-plugin-outlet name="topic-list-after-title"}}
-      {{~raw "list/unread-indicator" includeUnreadIndicator=includeUnreadIndicator 
-                                     topicId=topic.id 
-                                     unreadClass=unreadClass~}}
-      {{~#if showTopicPostBadges}}
-      {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
-      {{~/if}}
-    </span>
-    <div class="link-bottom-line">
-      {{#unless hideCategory}}
-        {{#unless topic.isPinnedUncategorized}}
-          {{category-link topic.category}}
-        {{/unless}}
-      {{/unless}}
-      {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
-      {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
+  <div class="topic-wrapper">
+    <div class= "poster-image">
+      <a href="{{topic.posters.[0].user.userPath}}" data-user-card="{{topic.posters.[0].user.username}}">{{avatar topic.posters.[0].user imageSize='small'}}</a>
+      {{~raw-plugin-outlet name="topic-list-before-link"}}
     </div>
-    {{#if expandPinned}}
-      {{raw "list/topic-excerpt" topic=topic}}
-    {{/if}}
+    <div class="topic-details">
+      <span class='link-top-line'>
+        {{~raw-plugin-outlet name="topic-list-before-status"}}
+        {{~raw "topic-status" topic=topic}}
+        {{~topic-link topic class="raw-link raw-topic-link"}}
+        {{~#if topic.featured_link}}
+        {{~topic-featured-link topic}}
+        {{~/if}}
+        {{~raw-plugin-outlet name="topic-list-after-title"}}
+        {{~raw "list/unread-indicator" includeUnreadIndicator=includeUnreadIndicator 
+                                       topicId=topic.id 
+                                       unreadClass=unreadClass~}}
+        {{~#if showTopicPostBadges}}
+        {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
+        {{~/if}}
+      </span>
+      <div class="link-bottom-line">
+        {{#unless hideCategory}}
+          {{#unless topic.isPinnedUncategorized}}
+            {{category-link topic.category}}
+          {{/unless}}
+        {{/unless}}
+        {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
+        {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
+      </div>
+      {{#if expandPinned}}
+        {{raw "list/topic-excerpt" topic=topic}}
+      {{/if}}
+    </div>
   </div>
 </td>
 
