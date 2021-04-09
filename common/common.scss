@@ -416,6 +416,24 @@ td.num.posts .d-icon {
   border-radius: 0;
 }
 
+//Club Nav Bar
+.d-header.wrap {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+header.d-header {
+  background-color: transparent;
+}
+
+header.d-header .wrap {
+  width: 100%
+  max-width: 1200px;
+  padding-right: 3em;
+  padding-left: 3em;
+  background-color: white;
+}
+
 // Custom header
 .b-header {
   width: 100%;
