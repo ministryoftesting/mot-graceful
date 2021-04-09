@@ -30,11 +30,6 @@ TopicListComponent.reopen({
 {{~raw-plugin-outlet name="topic-list-header-after"~}}
 </script>
 
-
-
-
-
-
 <script type="text/x-handlebars" data-template-name="list/topic-list-item.raw">
   {{#if bulkSelectEnabled}}
   <td class="bulk-select">
@@ -50,34 +45,37 @@ TopicListComponent.reopen({
   at the end of the link, preventing it from line wrapping onto its own line.
 --}}
 <td class='main-link clearfix' colspan="1" role="rowheader">
-  {{~raw-plugin-outlet name="topic-list-before-link"}}
-  <span class='link-top-line'>
-    {{~raw-plugin-outlet name="topic-list-before-status"}}
-    {{~raw "topic-status" topic=topic}}
-    {{~topic-link topic class="raw-link raw-topic-link"}}
-    {{~#if topic.featured_link}}
-    {{~topic-featured-link topic}}
-    {{~/if}}
-    {{~raw-plugin-outlet name="topic-list-after-title"}}
-    {{~raw "list/unread-indicator" includeUnreadIndicator=includeUnreadIndicator 
-                                   topicId=topic.id 
-                                   unreadClass=unreadClass~}}
-    {{~#if showTopicPostBadges}}
-    {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
-    {{~/if}}
-  </span>
-  <div class="link-bottom-line">
-    {{#unless hideCategory}}
-      {{#unless topic.isPinnedUncategorized}}
-        {{category-link topic.category}}
+  <div>
+    <a href="{{context.topic.posters.[0].user.userPath}}" data-user-card="{{context.topic.posters.[0].user.username}}">{{avatar context.topic.posters.[0].user imageSize='small'}}{{context.topic.posters.[0].user.username}}</a>
+    {{~raw-plugin-outlet name="topic-list-before-link"}}
+    <span class='link-top-line'>
+      {{~raw-plugin-outlet name="topic-list-before-status"}}
+      {{~raw "topic-status" topic=topic}}
+      {{~topic-link topic class="raw-link raw-topic-link"}}
+      {{~#if topic.featured_link}}
+      {{~topic-featured-link topic}}
+      {{~/if}}
+      {{~raw-plugin-outlet name="topic-list-after-title"}}
+      {{~raw "list/unread-indicator" includeUnreadIndicator=includeUnreadIndicator 
+                                     topicId=topic.id 
+                                     unreadClass=unreadClass~}}
+      {{~#if showTopicPostBadges}}
+      {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
+      {{~/if}}
+    </span>
+    <div class="link-bottom-line">
+      {{#unless hideCategory}}
+        {{#unless topic.isPinnedUncategorized}}
+          {{category-link topic.category}}
+        {{/unless}}
       {{/unless}}
-    {{/unless}}
-    {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
-    {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
+      {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
+      {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
+    </div>
+    {{#if expandPinned}}
+      {{raw "list/topic-excerpt" topic=topic}}
+    {{/if}}
   </div>
-  {{#if expandPinned}}
-    {{raw "list/topic-excerpt" topic=topic}}
-  {{/if}}
 </td>
 
 {{#if showPosters}}
@@ -128,13 +126,4 @@ TopicListComponent.reopen({
   {{/if}}
 {{/each}}
 </td>
-</script>
-
-<script
-  type="text/x-handlebars"
-  data-template-name="/connectors/topic-list-before-status/op-name.raw"
->
-  <div class="byline">
-    <a href="{{context.topic.posters.[0].user.userPath}}" data-user-card="{{context.topic.posters.[0].user.username}}">{{avatar context.topic.posters.[0].user imageSize='tiny'}}{{context.topic.posters.[0].user.username}}</a>
-  </div>
 </script>
