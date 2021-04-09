@@ -388,6 +388,8 @@ td.num.posts .d-icon {
 .poster-image {
   float: left;
   width: 33px;
+  display: inline-block;
+  vertical-align: middle;
   
   img {
     width: 100%;
@@ -397,6 +399,8 @@ td.num.posts .d-icon {
 
 .topic-details {
   float: left;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 // Plugins
