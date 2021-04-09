@@ -129,3 +129,12 @@ TopicListComponent.reopen({
 {{/each}}
 </td>
 </script>
+
+<script
+  type="text/x-handlebars"
+  data-template-name="/connectors/topic-list-before-status/op-name.raw"
+>
+  <div class="byline">
+    <a href="{{context.topic.posters.[0].user.userPath}}" data-user-card="{{context.topic.posters.[0].user.username}}">{{avatar context.topic.posters.[0].user imageSize='tiny'}}{{context.topic.posters.[0].user.username}}</a>
+  </div>
+</script>
