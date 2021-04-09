@@ -420,21 +420,21 @@ td.num.posts .d-icon {
 .heatmap-high a,
 .heatmap-high .d-icon,
 .heatmap-high .d-button-label {
-  color: #fe7a15 !important;
+  color: var(--tertiary);
 }
 
 .heatmap-med,
 .heatmap-med a,
 .heatmap-med .d-icon,
 .heatmap-med .d-button-label {
-  color: inherit;
+  color: var(--tertiary);
 }
 
 .heatmap-low,
 .heatmap-low a,
 .heatmap-low .d-icon,
 .heatmap-low .d-button-label {
-  color: inherit;
+  color: var(--tertiary);
 }
 
 .topic-list .heatmap-high {
