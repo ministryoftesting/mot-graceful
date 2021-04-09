@@ -1,5 +1,11 @@
 <div class="background-container"></div>
 
+<script>
+var TopicListComponent = require('discourse/components/topic-list').default;
+TopicListComponent.reopen({
+    showLikes: true
+});
+</script>
 
 <script type="text/x-handlebars" data-template-name="topic-list-header.raw">
   {{~raw-plugin-outlet name="topic-list-header-before"~}}
