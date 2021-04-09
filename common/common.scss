@@ -417,13 +417,14 @@ td.num.posts .d-icon {
 }
 
 //Club Nav Bar
-.d-header.wrap {
+.d-header-wrap {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
 header.d-header {
   background-color: transparent;
+  box-shadow: none !important;
 }
 
 header.d-header .wrap {
