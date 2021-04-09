@@ -46,35 +46,37 @@ TopicListComponent.reopen({
 --}}
 <td class='main-link clearfix' colspan="1" role="rowheader">
   <div>
-    <a href="{{topic.posters.[0].user.userPath}}" data-user-card="{{topic.posters.[0].user.username}}">{{avatar topic.posters.[0].user imageSize='small'}}{{topic.posters.[0].user.username}}</a>
+    <a href="{{topic.posters.[0].user.userPath}}" data-user-card="{{topic.posters.[0].user.username}}">{{avatar topic.posters.[0].user imageSize='small'}}</a>
     {{~raw-plugin-outlet name="topic-list-before-link"}}
-    <span class='link-top-line'>
-      {{~raw-plugin-outlet name="topic-list-before-status"}}
-      {{~raw "topic-status" topic=topic}}
-      {{~topic-link topic class="raw-link raw-topic-link"}}
-      {{~#if topic.featured_link}}
-      {{~topic-featured-link topic}}
-      {{~/if}}
-      {{~raw-plugin-outlet name="topic-list-after-title"}}
-      {{~raw "list/unread-indicator" includeUnreadIndicator=includeUnreadIndicator 
-                                     topicId=topic.id 
-                                     unreadClass=unreadClass~}}
-      {{~#if showTopicPostBadges}}
-      {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
-      {{~/if}}
-    </span>
-    <div class="link-bottom-line">
-      {{#unless hideCategory}}
-        {{#unless topic.isPinnedUncategorized}}
-          {{category-link topic.category}}
+    <div>
+      <span class='link-top-line'>
+        {{~raw-plugin-outlet name="topic-list-before-status"}}
+        {{~raw "topic-status" topic=topic}}
+        {{~topic-link topic class="raw-link raw-topic-link"}}
+        {{~#if topic.featured_link}}
+        {{~topic-featured-link topic}}
+        {{~/if}}
+        {{~raw-plugin-outlet name="topic-list-after-title"}}
+        {{~raw "list/unread-indicator" includeUnreadIndicator=includeUnreadIndicator 
+                                       topicId=topic.id 
+                                       unreadClass=unreadClass~}}
+        {{~#if showTopicPostBadges}}
+        {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
+        {{~/if}}
+      </span>
+      <div class="link-bottom-line">
+        {{#unless hideCategory}}
+          {{#unless topic.isPinnedUncategorized}}
+            {{category-link topic.category}}
+          {{/unless}}
         {{/unless}}
-      {{/unless}}
-      {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
-      {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
+        {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
+        {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
+      </div>
+      {{#if expandPinned}}
+        {{raw "list/topic-excerpt" topic=topic}}
+      {{/if}}
     </div>
-    {{#if expandPinned}}
-      {{raw "list/topic-excerpt" topic=topic}}
-    {{/if}}
   </div>
 </td>
 
