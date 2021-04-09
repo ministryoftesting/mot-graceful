@@ -1,12 +1,14 @@
 // Big thanks to jsthon for the initial work on this https://meta.discourse.org/u/jsthon/
 
+:root {
+  --primary-medium; pink;
+}
+
 @import "common/foundation/variables";
 
 @mixin box-shadow($value: 8px) {
   box-shadow: 0 1px $value rgba(black, 0.18);
 }
-
---primary-medium; pink;
 
 .background-container {
   position: fixed;
