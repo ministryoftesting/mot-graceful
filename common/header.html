@@ -46,8 +46,10 @@ TopicListComponent.reopen({
 --}}
 <td class='main-link clearfix' colspan="1" role="rowheader">
   <div>
-    <a href="{{topic.posters.[0].user.userPath}}" data-user-card="{{topic.posters.[0].user.username}}">{{avatar topic.posters.[0].user imageSize='small'}}</a>
-    {{~raw-plugin-outlet name="topic-list-before-link"}}
+    <div>
+      <a href="{{topic.posters.[0].user.userPath}}" data-user-card="{{topic.posters.[0].user.username}}">{{avatar topic.posters.[0].user imageSize='small'}}</a>
+      {{~raw-plugin-outlet name="topic-list-before-link"}}
+    </div>
     <div>
       <span class='link-top-line'>
         {{~raw-plugin-outlet name="topic-list-before-status"}}
