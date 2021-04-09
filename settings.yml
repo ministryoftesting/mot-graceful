@@ -8,3 +8,5 @@ tile_background: true
 no_background_image:
   default: false
   description: Disable the background image and tiling settings above.
+  
+showLikes: true
