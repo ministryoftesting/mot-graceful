@@ -423,17 +423,16 @@ td.num.posts .d-icon {
   color: var(--tertiary) !important;
 }
 
-.heatmap-high span {
+.heatmap-high span, .heatmap-high a {
   color: inherit;
 }
 
 .heatmap-med,
-.heatmap-med a,
 .heatmap-med .d-icon {
   color: var(--tertiary) !important;
 }
 
-.heatmap-med span {
+.heatmap-med span, .heatmap-med a {
   color: inherit;
 }
 
@@ -444,7 +443,7 @@ td.num.posts .d-icon {
   color: var(--tertiary) !important;
 }
 
-.heatmap-low span {
+.heatmap-low span, .heatmap-low a {
   color: inherit;
 }
 
