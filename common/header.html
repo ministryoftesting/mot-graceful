@@ -90,7 +90,7 @@ TopicListComponent.reopen({
   <td class="num likes">
     {{#if hasLikes}}
       <a href='{{topic.summaryUrl}}'>
-        {{number topic.like_count}} {{d-icon "heart"}}
+        {{d-icon "heart"}} {{number topic.like_count}} 
       </a>
     {{/if}}
   </td>
