@@ -72,7 +72,7 @@ TopicListComponent.reopen({
             {{category-link topic.category}}
           {{/unless}}
         {{/unless}}
-        {{discourse-tags topic=(concat '#' topic) mode="list" tagsForUser=tagsForUser}}
+        {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
         {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
       </div>
       {{#if expandPinned}}
