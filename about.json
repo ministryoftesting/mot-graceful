@@ -9,7 +9,7 @@
     "Graceful": {
       "primary": "333",
       "secondary": "ffffff",
-      "tertiary": "88af8e",
+      "tertiary": "4ab234",
       "quaternary": "4ab234",
       "header_background": "ffffff",
       "header_primary": "333333",
@@ -21,7 +21,7 @@
     "Graceful Dark": {
       "primary": "c4cfc5",
       "secondary": "445446",
-      "tertiary": "88af8e",
+      "tertiary": "4ab234",
       "quaternary": "4ab234",
       "header_background": "212821",
       "header_primary": "ffffff",
