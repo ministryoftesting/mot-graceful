@@ -460,15 +460,18 @@ td.num.posts .d-icon {
 
 .b-header ul.icons {
   text-align: center;
-  .b-header ul.icons>li {
-    float: left;
-    padding-right: 1rem;
-    list-style: none;
-  }
 }
+
+.b-header ul.icons>li {
+  float: left;
+  padding-right: 1rem;
+  list-style: none;
+}
+
 .b-header .panel>ul.icons a, .b-header .panel>ul.icons [class^="fa fa-"] {
   color: #fff;
 }
+
 .b-header ul.icons a, .b-header ul.icons [class^="fa fa-"] {
   font-size: 1.5em;
   display: inline-block;
