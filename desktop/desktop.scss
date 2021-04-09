@@ -83,6 +83,10 @@ ol.category-breadcrumb {
 .nav-pills > li > a {
   border-radius: 4px;
 }
+.nav-pills > li.active > a,
+.nav-pills > li > a.active {
+  margin-left: 10px;
+}
 
 nav.post-controls {
   button,
