@@ -405,6 +405,17 @@ td.num.posts .d-icon {
   margin-left: 1rem;
 }
 
+.discourse-tags {
+  line-height: 1;
+  .discourse-tag {
+    &:before {
+      content: "#";
+      display: inline-block;
+      margin-right: 0.15em;
+    }
+  }
+}
+
 // Plugins
 
 // Babble
