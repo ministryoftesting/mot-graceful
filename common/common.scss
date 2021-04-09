@@ -398,4 +398,13 @@ noscript > #main-outlet {
 
 td.num.likes .d-icon, td.num.posts .d-icon{
   padding-right: 0.3em; 
+  
+}
+
+td.num.likes .d-icon {
+  color: var(--love);
+}
+
+td.num.posts .d-icon {
+  color: var(--tertiary);
 }
