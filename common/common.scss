@@ -416,37 +416,6 @@ td.num.posts .d-icon {
   }
 }
 
-.heatmap-high,
-.heatmap-high a,
-.heatmap-high .d-icon,
-.heatmap-high .d-button-label {
-  color: var(--tertiary) !important;
-}
-
-.heatmap-high span, .heatmap-high a {
-  color: inherit;
-}
-
-.heatmap-med,
-.heatmap-med .d-icon {
-  color: var(--tertiary) !important;
-}
-
-.heatmap-med span, .heatmap-med a {
-  color: inherit;
-}
-
-.heatmap-low,
-.heatmap-low a,
-.heatmap-low .d-icon,
-.heatmap-low .d-button-label {
-  color: var(--tertiary) !important;
-}
-
-.heatmap-low span, .heatmap-low a {
-  color: inherit;
-}
-
 .topic-list .heatmap-high {
   font-weight: bold;
 }
