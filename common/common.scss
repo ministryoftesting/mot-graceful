@@ -435,6 +435,24 @@ header.d-header .wrap {
   background-color: white;
 }
 
+@media screen and (max-width: 775px) {
+    header.d-header .wrap {
+        padding:1.5em
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    header.d-header .wrap {
+        width:80%
+    }
+}
+
+@media screen and (max-width: 1075px) {
+    header.d-header .wrap {
+        width:85%
+    }
+}
+
 // Custom header
 .b-header {
   width: 100%;
