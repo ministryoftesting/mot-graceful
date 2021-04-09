@@ -116,3 +116,16 @@ TopicListComponent.reopen({
   </button>
 </{{view.tagName}}>
 </script>
+
+
+<script type="text/x-handlebars" data-template-name="list/posters-column.raw">
+<td class='posters'>
+{{#each posters as |poster|}}
+  {{#if poster.moreCount}}
+    <a class="posters-more-count">{{poster.moreCount}}</a>
+  {{else}}
+    <a href="{{poster.user.path}}" data-user-card="{{poster.user.username}}" class="{{poster.extraClasses}}">{{avatar poster avatarTemplatePath="user.avatar_template" usernamePath="user.username" namePath="user.name" imageSize="medium"}}</a>
+  {{/if}}
+{{/each}}
+</td>
+</script>
