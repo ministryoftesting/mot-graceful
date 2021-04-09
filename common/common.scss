@@ -412,6 +412,10 @@ td.num.posts .d-icon {
   font-weight: bold;
 }
 
+.select-kit.single-select.is-expanded .select-kit-header:not(.btn), .select-kit.single-select .select-kit-header:not(.btn):focus, .select-kit.single-select .select-kit-header:not(.btn):active {
+  border-radius: none;
+}
+
 // .category-drop-header {
 //   border: 1px solid var(--gf-primary-low-or-low-mid);
 // }
