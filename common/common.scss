@@ -417,6 +417,13 @@ td.num.posts .d-icon {
 }
 
 // Custom header
+
+@media screen and (max-width: 775px) {
+  .b-header {
+      display: none;
+  }
+}
+
 .b-header {
   width: 100%;
   background-color: #2C3E50;
