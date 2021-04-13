@@ -528,3 +528,63 @@ td.num.posts .d-icon {
 noscript > #main-outlet {
   padding-top: 6em;
 }
+
+// Post controls
+$post-controls-bg: null !default;
+$post-controls-text: #2C3E50; // The colour of the icons that appear under each post excluding the heart.
+$post-controls-bg-hover: null !default;
+$post-controls-text-hover: null !default; // The highlight colour for those buttons
+// Post controls
+nav.post-controls a,
+nav.post-controls button,
+nav.post-controls button.create{
+  background: $post-controls-bg;
+  color: $post-controls-text;
+  transition: background-color 0.25s, color 0.25s;
+  .d-icon {
+    color: $post-controls-text;
+  }
+  &.delete {
+    background: $danger;
+    &:hover {
+      background: $danger;
+      color: $secondary;
+      .d-icon {
+        color: $secondary;
+      }
+    }
+  }
+  &:hover {
+    background: $post-controls-bg-hover;
+    color: $post-controls-text-hover;
+    .d-icon {
+      color: $post-controls-text-hover;
+    }
+  }
+}
+// Reply buttons
+nav.post-controls .actions button.create,
+nav.post-controls .actions button.create .d-icon {
+    color: #1E3E86;//#0113CD;
+}
+// Like button
+nav.post-controls .actions .double-button button.my-likes .d-icon,
+nav.post-controls .actions .double-button button.read-indicator .d-icon,
+nav.post-controls .actions .double-button button.regular-likes .d-icon {
+    color: #2C3E50;
+}
+nav.post-controls .actions a,
+nav.post-controls .actions button {
+    color: #2C3E50;
+}
+nav.post-controls .actions .double-button button.has-like .d-icon {
+    color: #E84C3B;
+}
+// If topic is read by the user, make it a darker shade of grey than the default.
+.topic-list-item.visited a.title:not(.badge-notification), .latest-topic-list-item.visited a.title:not(.badge-notification), .category-topic-link.visited a.title:not(.badge-notification) {
+    color: #646464;
+}
+// Increase the contrast on the category box text description.
+.category-boxes .description {
+    color: #646464;
+}
