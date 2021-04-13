@@ -247,18 +247,23 @@ nav.post-controls {
     width:100%;
     z-index: 1001;
 }
-div#bottom-navbar-links {
+#bottom-navbar-links {
     width:99%;
     margin: 0 auto;
     padding-top:5px;
     max-width:1100px;
     text-align:center;
 }
-div#bottom-navbar-links a {
+#bottom-navbar-links a {
     color:#FFFFFF;
     font-size: 26px;
     font-weight: lighter;
 }
+#bottom-navbar-links a:not(:first-child), #bottom-navbar-links a:not(:last-child) {
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
 #navbar-left {
     float: left;
     margin-left: -15px;
