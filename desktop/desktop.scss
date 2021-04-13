@@ -210,3 +210,76 @@ nav.post-controls {
     width: 86%;
   }
 }
+
+.d-header {
+    background-color:#F0F0F0;
+    height: 4em;
+}
+.d-header #site-logo {
+    height: 3.8em;
+}
+.d-header-icons .d-icon {
+    color: black;
+}
+/*On scroll, change the post title colour so it is readable in the banner.*/
+.extra-info-wrapper .topic-link {
+  color: black;
+}
+/*On scroll, change the category/sub-category title colour so it is readable in the banner.*/
+.extra-info-wrapper .badge-wrapper.bullet span.badge-category, .extra-info-wrapper .badge-wrapper.bar span.badge-category, .extra-info-wrapper .badge-wrapper.none span.badge-category {
+    color: black;
+}
+.d-footer {
+    background-color:#2C3E4F;
+    line-height: 64px;
+    height: 64px;
+    text-align:center;
+}
+.d-footer {
+    color:#FFFFFF;
+    font-size: 0.9375rem;
+    font-weight: lighter;
+}
+/********** Nav Footer **********/
+#bottom-navbar {
+    height:44px;
+    background-color:#4BB234;
+    width:100%;
+    z-index: 1001;
+}
+div#bottom-navbar-links {
+    width:99%;
+    margin: 0 auto;
+    padding-top:5px;
+    max-width:1100px;
+    text-align:center;
+}
+div#bottom-navbar-links a {
+    color:#FFFFFF;
+    font-size: 18px;
+    font-weight: lighter;
+}
+#navbar-left {
+    float: left;
+    margin-left: -15px;
+    padding-top: 8px;
+}
+#navbar-left a {
+    font-size: 20px;
+    padding-left: 20px;
+}
+#navbar-right {
+    float:right;
+    padding-top: 8px;
+}
+#navbar-right a {
+    padding-left: 20px;
+}
+#navbar-center {
+    float:center;
+    padding-top: 8px;
+}
+#navbar-center a {
+    padding-left: 20px;
+}
+
