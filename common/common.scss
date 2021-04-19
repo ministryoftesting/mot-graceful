@@ -591,6 +591,8 @@ nav.post-controls .actions .double-button button.has-like .d-icon {
 
 .category-boxes .category-box {
     width: 46%;
+    background-color: var(--primary-low);
+    height: 160px;
 }
 
 .category-boxes .category-box-inner, .category-boxes-with-topics .category-box-inner {
@@ -620,8 +622,6 @@ nav.post-controls .actions .double-button button.has-like .d-icon {
 .category-boxes .category-box .category-box-inner .category-logo {
     align-self: center;
     display: inline-block;
-    width: 160px;
-    height: 160px;
 }
 
 .category-details {
