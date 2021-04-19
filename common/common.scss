@@ -685,3 +685,30 @@ category-boxes .category-box .category-box-inner {
     -webkit-box-orient: vertical;
     pointer-events: none;
 }
+
+.category-boxes .category-box .parent-box-link:before, .category-boxes-with-topics .category-box .parent-box-link:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+category-boxes .category-box .category-box-inner .category-logo img {
+    height: 100%;
+    width: 100%;
+}
+.category-boxes .category-box .logo.aspect-image img, .category-boxes-with-topics .category-box .logo.aspect-image img {
+    --height: 40px;
+    height: var(--height);
+    width: calc(var(--height) * var(--aspect-ratio));
+    max-width: 100%;
+}
+.category-boxes .category-box .logo.aspect-image img, .category-boxes-with-topics .category-box .logo.aspect-image img {
+    display: block;
+    width: auto;
+    height: 40px;
+    margin: 0 auto 1em auto;
+}
