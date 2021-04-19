@@ -138,8 +138,7 @@ TopicListComponent.reopen({
 </div>  
 </script>
 
-<script type="text/x-handlebars" data-template-name="components/categories-boxes.raw">
-  
+<script type="text/x-handlebars" data-template-name="components/categories-boxes">  
   <h1>HELLO MOT!</h1>
   {{#each categories as |c|}}
     <div style={{unless noCategoryStyle (border-color c.color)}} data-category-id={{c.id}} data-notification-level={{c.notificationLevelString}} data-url={{c.url}} class="category category-box category-box-{{c.slug}} {{if c.isMuted "muted"}} {{if noCategoryStyle "no-category-boxes-style"}}">
