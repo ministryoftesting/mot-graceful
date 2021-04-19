@@ -233,6 +233,10 @@ div#bottom-navbar-links a {
     font-size: 18px;
     font-weight: lighter;
 }
+#bottom-navbar-links a:not(:first-child), #bottom-navbar-links a:not(:last-child) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
 #navbar-left {
     float: left;
     margin-left: -15px;
