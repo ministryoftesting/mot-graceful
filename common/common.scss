@@ -611,9 +611,13 @@ nav.post-controls .actions .double-button button.has-like .d-icon {
 }
 
 .category-details h3 {
-    text-align: left;
-    margin-top: 0px;
-    margin-bottom: 1rem;
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 1rem;
+}
+
+.categories-list .category h3 {
+  margin-bottom: 0px;
 }
 
 .category-boxes .description {
