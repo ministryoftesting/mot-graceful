@@ -614,6 +614,18 @@ nav.post-controls .actions .double-button button.has-like .d-icon {
 
 .category-boxes .description {
     text-align: left;
+    margin-bottom: 0px;
+}
+
+.category-boxes .category-box .category-box-inner .category-logo {
+    align-self: center;
+    display: inline-block;
+    width: 160px;
+    height: 160px;
+}
+
+.category-details {
+  padding: 1rem;
 }
 
 // STEALING FROM FIGMA
