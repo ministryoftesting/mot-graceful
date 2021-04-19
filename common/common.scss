@@ -632,9 +632,14 @@ nav.post-controls .actions .double-button button.has-like .d-icon {
   aspect-ratio: 1 / 1;
 }
 
-.category.category-box, .category-box-inner {
+.category.category-box {
   border: none;
 }
+
+.category-box-inner {
+  border: none;
+}
+
 
 // STEALING FROM FIGMA
 // .category-boxes .category-box {
