@@ -639,3 +639,9 @@ nav.post-controls .actions .double-button button.has-like .d-icon {
 .category-boxes .category-box-inner {
   border: none;
 }
+
+.category-details {
+  border-left: none;
+  border: 1px solid var(--primary);
+  align-self: center;
+}
