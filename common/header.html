@@ -177,5 +177,7 @@ TopicListComponent.reopen({
 </script>
 
 <script type="text/x-handlebars" data-template-name="connectors/above-main-container/welcome-message">
-  <h1> HELLO WORLD!</h1>
+  {{#if !currentUser}}
+    <h1> HELLO WORLD!</h1>
+  {{/if}}
 </script>
