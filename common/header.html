@@ -177,17 +177,18 @@ TopicListComponent.reopen({
 </script>
 
 <script type="text/x-handlebars" data-template-name="connectors/above-main-container/welcome-message">
-  {{#if currentUser}}
-    <div class="welcome-message">
-      <div class="welcome-message-container">
-        <div class="image-container">
-          <img class="welcome-image" src="https://aws1.discourse-cdn.com/business7/uploads/ministryoftesting/original/2X/5/53d94412c78fc184d44d547cfa27672ab2fdac57.png">
-        </div>
-        <div class="header-container">
-          <h1>Welcome to The Club</h1>
-          <p>Ask questions, share feedback, and connect with the Ministry of Testing Community.</p>
-        </div>
+  <div class="welcome-message">
+    <div class="welcome-message-container">
+      <div class="image-container">
+        <img class="welcome-image" src="https://aws1.discourse-cdn.com/business7/uploads/ministryoftesting/original/2X/5/53d94412c78fc184d44d547cfa27672ab2fdac57.png">
+      </div>
+      <div class="header-container">
+        <h1>Welcome to The Club</h1>
+        <p>Ask questions, share feedback, and connect with the Ministry of Testing Community.</p>
+        {{#unless currentUser}}
+          {{showLogin=(route-action "showLogin")}}
+        {{/unless}}
       </div>
     </div>
-  {{/if}}
+  </div>  
 </script>
