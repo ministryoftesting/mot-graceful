@@ -193,11 +193,10 @@ TopicListComponent.reopen({
   </div>
 </script>
 
-javascripts/templates/mobile/components/parent-category-row.hbs
-{{#unless isHidden}}
+<script type="text/x-handlebars" data-template-name="javascripts/templates/mobile/components/parent-category-row.hbs">
+  {{#unless isHidden}}
   {{plugin-outlet name="category-list-above-each-category" connectorTagName="" tagName="" args=(hash category=category)}}
   <div data-category-id={{category.id}} data-notification-level={{category.notificationLevelString}} style={{border-color category.color}} class="category-list-item category {{if isMuted "muted"}}">
-    <h1> Hello </h1>
     <table class="topic-list">
       <tbody>
         <tr>
