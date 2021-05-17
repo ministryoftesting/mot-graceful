@@ -194,31 +194,63 @@ TopicListComponent.reopen({
 </script>
 
 
-<script type="text/x-handlebars" data-template-name="templates/mobile/components/categories-only">
-  {{#if categories}}
-    {{#if filteredCategories}}
-      <div class="category-list {{if showTopics "with-topics"}}">
-        <h1>Richard</h1>
-        {{#each filteredCategories as |c|}}
-          {{parent-category-row category=c showTopics=showTopics}}
-        {{/each}}
-      </div>
-    {{/if}}
-
-    {{#if mutedCategories}}
-      <div class="muted-categories">
-        <a href class="muted-categories-link" {{action "toggleShowMuted"}}>
-          <h3 class="muted-categories-heading">{{i18n "categories.muted"}}</h3>
-          {{#if mutedToggleIcon}}
-            {{d-icon mutedToggleIcon}}
+<script type="text/x-handlebars" data-template-name="templates/mobile/components/parent-category-row">
+  {{#unless isHidden}}
+  {{plugin-outlet name="category-list-above-each-category" connectorTagName="" tagName="" args=(hash category=category)}}
+  <div data-category-id={{category.id}} data-notification-level={{category.notificationLevelString}} style={{border-color category.color}} class="category-list-item category {{if isMuted "muted"}}">
+    <h1>Hello</h1>
+    <table class="topic-list">
+      <tbody>
+        <tr>
+          <th class="main-link">
+            {{category-title-link category=category}}
+          </th>
+        </tr>
+        {{#if category.description_excerpt}}
+          <tr class="category-description">
+            <td colspan="3">
+              {{html-safe category.description_excerpt}}
+            </td>
+          </tr>
+        {{/if}}
+        {{#unless isMuted}}
+          {{#if showTopics}}
+            {{#each category.topics as |t|}}
+              {{mobile-category-topic topic=t}}
+            {{/each}}
           {{/if}}
-        </a>
-        <div class="category-list {{if showTopics "with-topics"}} {{unless showMutedCategories "hidden"}}">
-          {{#each mutedCategories as |c|}}
-            {{parent-category-row category=c showTopics=showTopics listType="muted"}}
+        {{/unless}}
+        {{#if category.isGrandParent}}
+          {{#each category.subcategories as |subcategory|}}
+            {{sub-category-row category=subcategory listType=listType}}
           {{/each}}
-        </div>
+        {{else if category.subcategories}}
+          <tr class="subcategories-list">
+            <td>
+              <div class="subcategories">
+                {{#each category.subcategories as |subcategory|}}
+                  {{sub-category-item category=subcategory listType=listType}}
+                {{/each}}
+              </div>
+            </td>
+          </tr>
+        {{/if}}
+      </tbody>
+    </table>
+    <footer class="clearfix category-topics-count">
+      <div class="category-stat">
+        <a href={{category.url}}>
+          {{html-safe category.statTotal}}
+        </a>
       </div>
-    {{/if}}
-  {{/if}}
+      {{#unless category.pickAll}}
+        <div class="category-stat">
+          <a href={{category.url}}>
+            {{html-safe category.stat}}
+          </a>
+        </div>
+      {{/unless}}
+    </footer>
+  </div>
+  {{/unless}}
 </script>
