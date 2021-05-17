@@ -7,13 +7,6 @@ TopicListComponent.reopen({
 });
 </script>
 
-<script>
-var MobileCategoryListComponent = require('discourse/templates/mobile/templates/categories-only').default;
-TopicListComponent.reopen({
-    showTopics: true
-});
-</script>
-
 <script type="text/x-handlebars" data-template-name="topic-list-header.raw">
   {{~raw-plugin-outlet name="topic-list-header-before"~}}
 {{#if bulkSelectEnabled}}
