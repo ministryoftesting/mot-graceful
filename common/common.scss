@@ -604,6 +604,11 @@ nav.post-controls .actions .double-button button.has-like .d-icon {
     padding: 0;
 }
 
+.category-box-inner:hover{
+  box-shadow: -8px 8px 0 0 var(--tertiary);
+  transform: translate(8px, -8px);
+}
+
 .category-boxes .category-box .logo.aspect-image img, .category-boxes-with-topics .category-box .logo.aspect-image img {
   height: 100%;
   width: 100%;
@@ -675,12 +680,6 @@ nav.post-controls .actions .double-button button.has-like .d-icon {
     width: 70px;
   }
 }
-
-.welcome-message-container:hover {
-  box-shadow: -8px 8px 0 0 var(--tertiary);
-  transform: translate(8px, -8px);
-}
-
 
 .header-container {
   display: flex;
