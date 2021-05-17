@@ -593,6 +593,7 @@ nav.post-controls .actions .double-button button.has-like .d-icon {
     width: 46%;
     background-color: var(--primary-very-low);
     height: 160px;
+    transition: all ease-out 0.2s;
 }
 
 .category-boxes .category-box-inner, .category-boxes-with-topics .category-box-inner {
@@ -602,7 +603,6 @@ nav.post-controls .actions .double-button button.has-like .d-icon {
 
 .category-boxes .category-box .category-box-inner {
     padding: 0;
-    transition: all ease-out 0.2s;
 }
 
 .category-box:hover{
