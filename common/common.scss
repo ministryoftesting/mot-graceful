@@ -668,3 +668,13 @@ nav.post-controls .actions .double-button button.has-like .d-icon {
     font-weight: bold;
   }
 }
+
+.welcome-message-container:after {
+    bottom: 32px;
+    content: url(https://aws1.discourse-cdn.com/business7/uploads/ministryoftesting/original/2X/5/53d94412c78fc184d44d547cfa27672ab2fdac57.png);
+    height: 150px;
+    position: absolute;
+    right: 0;
+    width: 256px;
+    z-index: -1;
+}
