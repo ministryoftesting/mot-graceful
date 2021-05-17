@@ -288,3 +288,44 @@ nav.post-controls {
 #navbar-center a {
     padding-left: 20px;
 }
+
+.welcome-message {
+  background-color: var(--tertiary-low);
+}
+
+.welcome-message-container {
+  padding: 3rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-content: center;
+  
+  h1 {
+    font-weight: bolder;
+  }
+  
+  p {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  button {
+    width: 70px;
+  }
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.image-container {
+  margin-right: 3rem;
+  display: flex;
+  height: 100px;
+}
+
+.welcome-image {
+  height: 100%;
+  align-self: center;
+}
