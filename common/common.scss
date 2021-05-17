@@ -676,6 +676,12 @@ nav.post-controls .actions .double-button button.has-like .d-icon {
   }
 }
 
+.welcome-message-container:hover {
+  box-shadow: -8px 8px 0 0 var(--tertiary);
+  transform: translate(8px, -8px);
+}
+
+
 .header-container {
   display: flex;
   flex-direction: column;
