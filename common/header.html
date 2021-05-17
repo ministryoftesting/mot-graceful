@@ -177,7 +177,12 @@ TopicListComponent.reopen({
 </script>
 
 <script type="text/x-handlebars" data-template-name="connectors/above-main-container/welcome-message">
-  {{#unless currentUser}}
-    <h1> HELLO WORLD!</h1>
-  {{/unless}}
+  {{#if currentUser}}
+    <div class="welcome-message">
+      <div class="welcome-message-container">
+        <h1>Welcome to The Club</h1>
+        <p>Ask questions, share feedback, and connect with the Ministry of Testing Community.</p>
+      </div>
+    </div>
+  {{/if}}
 </script>
