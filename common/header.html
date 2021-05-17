@@ -185,9 +185,10 @@ TopicListComponent.reopen({
       <div class="header-container">
         <h1>Welcome to The Club</h1>
         <p>Ask questions, share feedback, and connect with the Ministry of Testing Community.</p>
-        {{#if currentUser}}
-          {{d-button class="btn-primary btn" action=(route-action "showLogin") label="log_in"}}
-        {{/if}}
+        // {{#if currentUser}}
+        //   {{d-button class="btn-primary btn" action=(route-action "showLogin") label="log_in"}}
+        // {{/if}}
+        {{d-button class="btn-primary btn" action=(route-action "showLogin") label="log_in"}}
       </div>
     </div>
   </div>  
