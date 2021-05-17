@@ -7,14 +7,6 @@ TopicListComponent.reopen({
 });
 </script>
 
-<script>
-var MobileCategoryComponent = require('discourse/javascripts/templates/mobile/components/categories-only.hbs
-').default;
-MobileCategoryComponent.reopen({
-    showTopics: false
-});
-</script>
-
 <script type="text/x-handlebars" data-template-name="topic-list-header.raw">
   {{~raw-plugin-outlet name="topic-list-header-before"~}}
 {{#if bulkSelectEnabled}}
@@ -199,4 +191,65 @@ MobileCategoryComponent.reopen({
       </div>
     </div>
   </div>
+</script>
+
+javascripts/templates/mobile/components/parent-category-row.hbs
+{{#unless isHidden}}
+  {{plugin-outlet name="category-list-above-each-category" connectorTagName="" tagName="" args=(hash category=category)}}
+  <div data-category-id={{category.id}} data-notification-level={{category.notificationLevelString}} style={{border-color category.color}} class="category-list-item category {{if isMuted "muted"}}">
+    <h1> Hello </h1>
+    <table class="topic-list">
+      <tbody>
+        <tr>
+          <th class="main-link">
+            {{category-title-link category=category}}
+          </th>
+        </tr>
+        {{#if category.description_excerpt}}
+          <tr class="category-description">
+            <td colspan="3">
+              {{html-safe category.description_excerpt}}
+            </td>
+          </tr>
+        {{/if}}
+        {{#unless isMuted}}
+          {{#if showTopics}}
+            {{#each category.topics as |t|}}
+              {{mobile-category-topic topic=t}}
+            {{/each}}
+          {{/if}}
+        {{/unless}}
+        {{#if category.isGrandParent}}
+          {{#each category.subcategories as |subcategory|}}
+            {{sub-category-row category=subcategory listType=listType}}
+          {{/each}}
+        {{else if category.subcategories}}
+          <tr class="subcategories-list">
+            <td>
+              <div class="subcategories">
+                {{#each category.subcategories as |subcategory|}}
+                  {{sub-category-item category=subcategory listType=listType}}
+                {{/each}}
+              </div>
+            </td>
+          </tr>
+        {{/if}}
+      </tbody>
+    </table>
+    <footer class="clearfix category-topics-count">
+      <div class="category-stat">
+        <a href={{category.url}}>
+          {{html-safe category.statTotal}}
+        </a>
+      </div>
+      {{#unless category.pickAll}}
+        <div class="category-stat">
+          <a href={{category.url}}>
+            {{html-safe category.stat}}
+          </a>
+        </div>
+      {{/unless}}
+    </footer>
+  </div>
+{{/unless}}
 </script>
