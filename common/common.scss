@@ -654,3 +654,12 @@ nav.post-controls .actions .double-button button.has-like .d-icon {
 .welcome-message {
   background-color: var(--tertiary-low);
 }
+
+.welcome-message-container {
+  padding: 3rem;
+  margin-bottom: 1rem;
+  
+  h1 {
+    font-weight: bolder;
+  }
+}
