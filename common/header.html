@@ -1,117 +1,117 @@
 <div class="background-container"></div>
 
 <script>
-var TopicListComponent = require('discourse/components/topic-list').default;
-TopicListComponent.reopen({
+  var TopicListComponent = require('discourse/components/topic-list').default;
+  TopicListComponent.reopen({
     showLikes: true
-});
+  });
 </script>
 
 <script type="text/x-handlebars" data-template-name="topic-list-header.raw">
   {{~raw-plugin-outlet name="topic-list-header-before"~}}
-{{#if bulkSelectEnabled}}
-  <th class="bulk-select">
-    {{#if canBulkSelect}}
-      {{raw "flat-button" class="bulk-select" icon="list" title="topics.bulk.toggle"}}
-    {{/if}}
-  </th>
-{{/if}}
-{{raw "topic-list-header-column" order='default' name=listTitle bulkSelectEnabled=bulkSelectEnabled showBulkToggle=toggleInTitle canBulkSelect=canBulkSelect}}
-{{#if showPosters}}
-  {{raw "topic-list-header-column" order='posters' ariaLabel=(i18n "category.sort_options.posters")}}
-{{/if}}
-{{raw "topic-list-header-column" sortable=sortable number='true' order='posts' name='replies'}}
-{{#if showLikes}}
-  {{raw "topic-list-header-column" sortable=sortable number='true' order='likes' name='likes'}}
-{{/if}}
-{{#if showOpLikes}}
-  {{raw "topic-list-header-column" sortable=sortable number='true' order='op_likes' name='likes'}}
-{{/if}}
-{{~raw-plugin-outlet name="topic-list-header-after"~}}
+  {{#if bulkSelectEnabled}}
+    <th class="bulk-select">
+      {{#if canBulkSelect}}
+        {{raw "flat-button" class="bulk-select" icon="list" title="topics.bulk.toggle"}}
+      {{/if}}
+    </th>
+  {{/if}}
+  {{raw "topic-list-header-column" order='default' name=listTitle bulkSelectEnabled=bulkSelectEnabled showBulkToggle=toggleInTitle canBulkSelect=canBulkSelect}}
+  {{#if showPosters}}
+    {{raw "topic-list-header-column" order='posters' ariaLabel=(i18n "category.sort_options.posters")}}
+  {{/if}}
+  {{raw "topic-list-header-column" sortable=sortable number='true' order='posts' name='replies'}}
+  {{#if showLikes}}
+    {{raw "topic-list-header-column" sortable=sortable number='true' order='likes' name='likes'}}
+  {{/if}}
+  {{#if showOpLikes}}
+    {{raw "topic-list-header-column" sortable=sortable number='true' order='op_likes' name='likes'}}
+  {{/if}}
+  {{~raw-plugin-outlet name="topic-list-header-after"~}}
 </script>
 
 <script type="text/x-handlebars" data-template-name="list/topic-list-item.raw">
   {{#if bulkSelectEnabled}}
-  <td class="bulk-select">
-    <input type="checkbox" class="bulk-select">
-  </td>
-{{/if}}
+    <td class="bulk-select">
+      <input type="checkbox" class="bulk-select">
+    </td>
+  {{/if}}
 
-{{!--
+  {{!--
   The `~` syntax strip spaces between the elements, making it produce
   `<a class=topic-post-badges>Some text</a><span class=topic-post-badges>`,
   with no space between them.
   This causes the topic-post-badge to be considered the same word as "text"
   at the end of the link, preventing it from line wrapping onto its own line.
 --}}
-<td class='main-link clearfix' colspan="1" role="rowheader">
-  <div class="topic-wrapper">
-    <div class= "poster-image">
-      <a href="{{topic.posters.[0].user.userPath}}" data-user-card="{{topic.posters.[0].user.username}}">{{avatar topic.posters.[0].user imageSize='small'}}</a>
-      {{~raw-plugin-outlet name="topic-list-before-link"}}
-    </div>
-    <div class="topic-details">
-      <span class='link-top-line'>
-        {{~raw-plugin-outlet name="topic-list-before-status"}}
-        {{~raw "topic-status" topic=topic}}
-        {{~topic-link topic class="raw-link raw-topic-link"}}
-        {{~#if topic.featured_link}}
-        {{~topic-featured-link topic}}
-        {{~/if}}
-        {{~raw-plugin-outlet name="topic-list-after-title"}}
-        {{~raw "list/unread-indicator" includeUnreadIndicator=includeUnreadIndicator 
-                                       topicId=topic.id 
-                                       unreadClass=unreadClass~}}
-        {{~#if showTopicPostBadges}}
-        {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
-        {{~/if}}
-      </span>
-      <div class="link-bottom-line">
-        {{#unless hideCategory}}
-          {{#unless topic.isPinnedUncategorized}}
-            {{category-link topic.category}}
-          {{/unless}}
-        {{/unless}}
-        {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
-        {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
+  <td class='main-link clearfix' colspan="1" role="rowheader">
+    <div class="topic-wrapper">
+      <div class="poster-image">
+        <a href="{{topic.posters.[0].user.userPath}}" data-user-card="{{topic.posters.[0].user.username}}">{{avatar topic.posters.[0].user imageSize='small'}}</a>
+        {{~raw-plugin-outlet name="topic-list-before-link"}}
       </div>
-      {{#if expandPinned}}
-        {{raw "list/topic-excerpt" topic=topic}}
-      {{/if}}
+      <div class="topic-details">
+        <span class='link-top-line'>
+          {{~raw-plugin-outlet name="topic-list-before-status"}}
+          {{~raw "topic-status" topic=topic}}
+          {{~topic-link topic class="raw-link raw-topic-link"}}
+          {{~#if topic.featured_link}}
+          {{~topic-featured-link topic}}
+          {{~/if}}
+          {{~raw-plugin-outlet name="topic-list-after-title"}}
+          {{~raw "list/unread-indicator" includeUnreadIndicator=includeUnreadIndicator
+                                       topicId=topic.id
+                                       unreadClass=unreadClass~}}
+          {{~#if showTopicPostBadges}}
+          {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
+          {{~/if}}
+        </span>
+        <div class="link-bottom-line">
+          {{#unless hideCategory}}
+            {{#unless topic.isPinnedUncategorized}}
+              {{category-link topic.category}}
+            {{/unless}}
+          {{/unless}}
+          {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
+          {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
+        </div>
+        {{#if expandPinned}}
+          {{raw "list/topic-excerpt" topic=topic}}
+        {{/if}}
+      </div>
     </div>
-  </div>
-</td>
-
-{{#if showPosters}}
-  {{raw "list/posters-column" posters=topic.featuredUsers}}
-{{/if}}
-
-{{raw "list/posts-count-column" topic=topic}}
-
-{{#if showLikes}}
-  <td class="num likes">
-    {{#if hasLikes}}
-      <a href='{{topic.summaryUrl}}'>
-        {{d-icon "heart" className="d-icon-d-liked"}} {{number topic.like_count}} 
-      </a>
-    {{/if}}
   </td>
-{{/if}}
 
-{{#if showOpLikes}}
-  <td class="num likes">
-    {{#if hasOpLikes}}
-      <a href='{{topic.summaryUrl}}'>
-        {{number topic.op_like_count}} {{d-icon "heart"}}
-      </a>
-    {{/if}}
-  </td>
-{{/if}}
+  {{#if showPosters}}
+    {{raw "list/posters-column" posters=topic.featuredUsers}}
+  {{/if}}
+
+  {{raw "list/posts-count-column" topic=topic}}
+
+  {{#if showLikes}}
+    <td class="num likes">
+      {{#if hasLikes}}
+        <a href='{{topic.summaryUrl}}'>
+          {{d-icon "heart" className="d-icon-d-liked"}} {{number topic.like_count}}
+        </a>
+      {{/if}}
+    </td>
+  {{/if}}
+
+  {{#if showOpLikes}}
+    <td class="num likes">
+      {{#if hasOpLikes}}
+        <a href='{{topic.summaryUrl}}'>
+          {{number topic.op_like_count}} {{d-icon "heart"}}
+        </a>
+      {{/if}}
+    </td>
+  {{/if}}
 
 </script>
 
 <script type="text/x-handlebars" data-template-name="list/posts-count-column.raw">
-<{{view.tagName}} class='num posts-map posts {{view.likesHeat}}' title='{{view.title}}'>
+  <{{view.tagName}} class='num posts-map posts {{view.likesHeat}}' title='{{view.title}}'>
   <button class="btn-link posts-map badge-posts {{view.likesHeat}}">
     {{raw-plugin-outlet name="topic-list-before-reply-count"}}
     {{d-icon "far-comment"}} {{number topic.replyCount noTitle="true" ariaLabel=view.title}}
@@ -121,7 +121,7 @@ TopicListComponent.reopen({
 
 
 <script type="text/x-handlebars" data-template-name="list/posters-column.raw">
-<td class='posters'>
+  <td class='posters'>
 {{#each posters as |poster|}}
   {{#if poster.moreCount}}
     <a class="posters-more-count">{{poster.moreCount}}</a>
@@ -134,13 +134,14 @@ TopicListComponent.reopen({
 
 <script type='text/x-handlebars' data-template-name='/connectors/above-site-header/brand-header'>
   <div id="ember8" class="above-site-header-outlet brand-header ember-view">
-  <div id="ember9" class="ember-view"><header class="b-header clearfix"><div class="wrap"><div class="contents clearfix"><div class="title"><a href="https://ministryoftesting.com"><img src="https://aws1.discourse-cdn.com/business7/uploads/ministryoftesting/original/2X/3/3650e1d805221d2a5444ca87c6adb4499d10169d.svg" alt="MoT" id="brand-logo" class="logo-big"></a></div><nav class="links"><ul class="nav nav-pills"></ul></nav><div class="panel clearfix"><ul class="icons clearfix"><li><a class="widget-link" href="https://www.ministryoftesting.com/dojo/catalog" title="Learn" target=""><svg class="fa d-icon d-icon-graduation-cap svg-icon svg-node" aria-hidden="true"><use xlink:href="#graduation-cap"></use></svg> Learn</a></li><li><a class="widget-link" href="https://ministryoftesting.com/events" title="Events" target=""><svg class="fa d-icon d-icon-calendar-alt svg-icon svg-node" aria-hidden="true"><use xlink:href="#calendar-alt"></use></svg> Events</a></li><li><a class="widget-link" href="https://club.ministryoftesting.com" title="Discussions" target=""><svg class="fa d-icon d-icon-comments svg-icon svg-node" aria-hidden="true"><use xlink:href="#comments"></use></svg> Discussions</a></li></ul></div></div></div></header></div>
-</div>  
+  <div id="ember9" class="ember-view"><header class="b-header clearfix"><div class="wrap"><div class="contents clearfix"><div class="title"><a href="https://ministryoftesting.com"><img src="https://aws1.discourse-cdn.com/business7/uploads/ministryoftesting/original/2X/3/3650e1d805221d2a5444ca87c6adb4499d10169d.svg" alt="MoT" id="brand-logo" class="logo-big"></a></div><nav class="links"><ul class="nav nav-pills"></ul></nav><div class="panel clearfix"><ul class="icons clearfix"><li><a class="widget-link" href="https://www.ministryoftesting.com/dojo/catalog" title="Learn" target=""><svg class="fa d-icon d-icon-graduation-cap svg-icon svg-node" aria-hidden="true"><use xlink:href="#graduation-cap"></use></svg> Learn</a></li><li><a class="widget-link" href="https://ministryoftesting.com/events" title="Events" target=""><svg class="fa d-icon d-icon-calendar-alt svg-icon svg-node" aria-hidden="true"><use xlink:href="#calendar-alt"></use></svg> Events</a></li><li><a class="widget-link" href="https://www.ministryoftesting.com/connect" title="Connect" target=""><svg class="fa d-icon d-icon-users svg-icon svg-node" aria-hidden="true"><use xlink:href="#users"></use></svg> Connect</a></li></ul></div></div></div></header></div>
+  </div>
 </script>
 
 <script type="text/x-handlebars" data-template-name="components/categories-boxes">
   {{#each categories as |c|}}
-    <div style={{unless noCategoryStyle (border-color c.color)}} data-category-id={{c.id}} data-notification-level={{c.notificationLevelString}} data-url={{c.url}} class="category category-box category-box-{{c.slug}} {{if c.isMuted "muted"}} {{if noCategoryStyle "no-category-boxes-style"}}">
+    <div style={{unless noCategoryStyle (border-color c.color)}} data-category-id={{c.id}} data-notification-level={{c.notificationLevelString}} data-url={{c.url}}
+      class="category category-box category-box-{{c.slug}} {{if c.isMuted "muted"}} {{if noCategoryStyle "no-category-boxes-style"}}">
       <div class="category-box-inner">
         {{#unless c.isMuted}}
           {{#if c.uploaded_logo.url}}
