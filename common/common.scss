@@ -365,8 +365,8 @@ span.user-title {
 }
 
 td.num.likes .d-icon, td.num.posts .d-icon{
-  padding-right: 0.3em; 
-  
+  padding-right: 0.3em;
+
 }
 
 td.num.likes .d-icon {
@@ -379,16 +379,18 @@ td.num.posts .d-icon {
 
 .topic-wrapper {
   display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .poster-image {
   float: left;
   align-self: center;
-  
+
   img {
     width: 33px;
     height: 33px;
-  } 
+  }
 }
 
 .topic-details {
