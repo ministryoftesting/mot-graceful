@@ -10,6 +10,10 @@
   box-shadow: 0 1px $value rgba(black, 0.18);
 }
 
+html {
+  font-size: 16px; /* default is 15px */
+}
+
 .background-container {
   position: fixed;
   top: 0;
