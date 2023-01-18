@@ -333,8 +333,11 @@ nav.post-controls {
 
 .nav-pills>li a.active, .nav-pills>li button.active {
   background-color: var(--primary-low);
+  color: var(--primary-high);
+
 }
 
 #create-topic{
   background-color: var(--quaternary);
+  color: var(--secondary);
 }
