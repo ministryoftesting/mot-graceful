@@ -330,3 +330,11 @@ nav.post-controls {
   width: 100%;
   align-self: center;
 }
+
+.nav-pills>li a.active, .nav-pills>li button.active {
+  background-color: var(--primary-low);
+}
+
+#create-topic{
+  background-color: var(--quaternary);
+}
