@@ -331,7 +331,7 @@ nav.post-controls {
   align-self: center;
 }
 
-.nav-pills>li a.active, .nav-pills>li button.active {
+.list-controls .nav-pills>li a.active, .list-controls .nav-pills>li button.active {
   background-color: var(--primary-low);
   color: var(--primary-high);
 
