@@ -176,3 +176,93 @@
     </div>
   {{/each}}
 </script>
+
+<script>
+    let rss = `<path d="M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M7.5,15A1.5,1.5 0 0,0 6,16.5A1.5,1.5 0 0,0 7.5,18A1.5,1.5 0 0,0 9,16.5A1.5,1.5 0 0,0 7.5,15M6,10V12A6,6 0 0,1 12,18H14A8,8 0 0,0 6,10M6,6V8A10,10 0 0,1 16,18H18A12,12 0 0,0 6,6Z"></path>`
+    let mdiSchool = `<path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"></path>`
+    let logo = `<g xmlns="http://www.w3.org/2000/svg" fill="#0e1e2b">
+    <path d="M77.4 196.2 c-8 -6.9 -11.4 -16.9 -11.4 -33.2 0.1 -20.9 2.4 -30.2 6.7 -27.4 2.9 1.8 4.3 9.4 5.4 28.9 0.9 16.5 1.4 19.8 3.6 25 1.3 3.3 2.5 6.7 2.6 7.5 0.3 2.6 -3.6 2.1 -6.9 -0.8z"/>
+    <path d="M2.9 167.3 c-5.1 -6.1 11.2 -24.2 21.9 -24.3 2.6 0 2.7 1.1 0.6 5.5 -1.4 3 -12.6 13.5 -14.3 13.5 -0.4 0 -1.4 1.2 -2.1 2.6 -2 3.6 -4.5 4.8 -6.1 2.7z"/>
+    <path d="M87.4 160.5 c-1.9 -1.9 -2.4 -3.4 -2.2 -5.8 0.4 -4.5 3.2 -4.7 7.4 -0.6 3.9 3.8 4.1 4.9 1.6 7.2 -2.5 2.3 -3.9 2.1 -6.8 -0.8z"/>
+    <path d="M126.5 158.9 c-6 -3 -10 -7.4 -17 -18.6 -7.6 -12.2 -8.2 -13.8 -5.8 -15.2 2.8 -1.5 7.3 1.8 21.3 15.4 6.9 6.8 13.5 12.6 14.7 12.9 2.7 0.8 3.9 4.2 2.3 6.1 -1.8 2.2 -10.7 1.8 -15.5 -0.6z"/>
+    <path d="M36.2 156.7 c-1.5 -1.8 -1.8 -7.8 -0.4 -10.3 1.9 -3.6 3.8 -4.7 6.1 -3.4 1.7 0.9 2.1 2 2.1 6.1 0 2.8 -0.5 5.9 -1 7 -1.2 2.2 -5.2 2.5 -6.8 0.6z"/>
+    <path d="M121.5 116 c-0.8 -2.5 1.1 -5.1 3 -4.4 2 0.8 2.7 3.4 1.4 5 -1.7 2 -3.7 1.7 -4.4 -0.6z"/>
+    <path d="M4.3 113 c-2.6 -1.1 -2.8 -1.9 -1 -4.4 1.5 -2 7.5 -2.9 9.5 -1.4 1.8 1.5 1.5 4.6 -0.7 5.8 -2.3 1.2 -4.8 1.2 -7.8 0z"/>
+    <path d="M32.7 82 c-6.3 -4 -10.3 -9.9 -13.2 -19.4 -2.5 -8.8 -4 -24 -2.7 -29.5 0.9 -4.2 3.4 -6.1 6 -4.5 1.7 1.1 1.9 2 4.6 17.9 1.8 10.8 7.3 22.5 14.1 30.3 2.8 3.1 4.5 5.8 4.1 6.7 -1 2.6 -7.7 1.8 -12.9 -1.5z"/>
+    <path d="M133.6 80.4 c-2.1 -2.1 -2 -2.9 0.6 -5.4 2.8 -2.6 6.6 -3.6 8.6 -2.3 2.5 1.5 2.4 2.9 -0.3 6.2 -2.9 3.4 -6.4 4 -8.9 1.5z"/>
+    <path d="M93.3 73.3 c-2 -0.8 -1.6 -2.8 2.6 -11.1 7.1 -14.1 10.8 -19.4 22.7 -31.9 9.8 -10.5 12.1 -12.4 14.3 -12.1 1.5 0.2 2.7 1 2.9 2 0.6 3.2 -18 29.9 -29.4 42.1 -6 6.5 -11.1 11.7 -11.4 11.6 -0.3 0 -1.1 -0.3 -1.7 -0.6z"/>
+    <path d="M61.7 56.2 c-2.7 -3 -3.3 -7.9 -1.2 -10.2 1 -1.1 2.4 -2 3.1 -2 2.1 0 4.4 4.2 4.4 8 0 5.6 -3.1 7.7 -6.3 4.2z"/>
+    <path d="M96.2 18.8 c-4.2 -4.2 4 -19.3 8.8 -16.3 1.8 1.1 1 6.9 -1.7 12.2 -2.6 5.3 -4.7 6.5 -7.1 4.1z"/>
+    </g>`
+
+    const div = document.createElement("div")
+    div.className = "sidebar-section-link-wrapper"
+    div.innerHTML = `
+            <a href="https://www.latranchee.com" class="sidebar-section-link sidebar-section-link-everything sidebar-row">
+              <span class="sidebar-section-link-prefix icon">
+                <svg viewBox="0 0 100 100" class="logoIcon" xmlns="http://www.w3.org/2000/svg">${logo}</svg>
+              </span>
+              <span class="sidebar-section-link-content-text"> Accueil </span>
+            </a>
+      `
+
+    const customHeader = document.createElement("div")
+    customHeader.className = "sidebar-section-wrapper sidebar-section-community"
+    customHeader.innerHTML = `
+            <div class="sidebar-section-header-wrapper sidebar-row">
+              <button id="ember11" class="sidebar-section-header sidebar-section-header-collapsable btn-flat btn no-text" type="button">
+                <span class="sidebar-section-header-text"> Camp d'entraînement </span>
+              </button>
+          </div>
+          <div class="sidebar-section-content" id="customNavigation"/>
+      `
+
+    $(document).ready(function () {
+        // Create the links
+        const links = [
+            { title: "Accueil", src: "https://www.latranchee.com", svg: logo, viewbox: "0 0 100 100" },
+            { title: "Formations", src: "https://www.latranchee.com/formations", svg: mdiSchool, viewbox: "2 -2 16 16" },
+            { title: "Blogue", src: "https://www.latranchee.com/blogue", viewbox: "1 -3 16 16", svg: rss },
+        ]
+
+        // Mobile
+        let hamburger = document.getElementById("toggle-hamburger-menu")
+        if (hamburger) {
+            hamburger.addEventListener("click", addCustomLinks)
+        } else {
+            addCustomLinks()
+        }
+
+        let bool = false;
+        function addCustomLinks() {
+            setTimeout(function () {
+                // Force to wait until navigation has been loaded
+                const sidebar = document.getElementsByClassName("sidebar-sections")[0]
+                if (sidebar) {
+                    sidebar.prepend(customHeader)
+                    if (bool) return;
+                    // Get the customNav Id
+                    const customNavigation = document.getElementById("customNavigation")
+                    if (customNavigation) {
+                        links.filter(function (link) {
+                            let linkDiv = document.createElement("div")
+                            linkDiv.className = "sidebar-section-link-wrapper"
+                            linkDiv.innerHTML = `<a href="${link.src}" class="sidebar-section-link sidebar-section-link-everything sidebar-row ember-view">
+                        <span class="sidebar-section-link-prefix icon" id="link_${link.title}"></span>
+                        <span class="sidebar-section-link-content-text"> ${link.title} </span>
+                    </a>
+                  `
+                            customNavigation.append(linkDiv)
+                            let linkIcon = document.getElementById("link_" + link.title)
+                            if (linkIcon && link.svg) {
+                                linkIcon.innerHTML = `<svg viewBox="${link.viewbox}" class="logoIcon" xmlns="http://www.w3.org/2000/svg"> ${link.svg}</svg>`
+                            }
+                        })
+                    }
+                }
+                bool = true
+            }, 0)
+
+        }
+    })
+</script>
