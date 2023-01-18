@@ -132,12 +132,6 @@
 </td>
 </script>
 
-<script type='text/x-handlebars' data-template-name='/connectors/above-site-header/brand-header'>
-  <div id="ember8" class="above-site-header-outlet brand-header ember-view">
-  <div id="ember9" class="ember-view"><header class="b-header clearfix"><div class="wrap"><div class="contents clearfix"><div class="title"><a href="https://ministryoftesting.com"><img src="https://aws1.discourse-cdn.com/business7/uploads/ministryoftesting/original/2X/3/3650e1d805221d2a5444ca87c6adb4499d10169d.svg" alt="MoT" id="brand-logo" class="logo-big"></a></div><nav class="links"><ul class="nav nav-pills"></ul></nav><div class="panel clearfix"><ul class="icons clearfix"><li><a class="widget-link" href="https://www.ministryoftesting.com/dojo/catalog" title="Learn" target=""><svg class="fa d-icon d-icon-graduation-cap svg-icon svg-node" aria-hidden="true"><use xlink:href="#graduation-cap"></use></svg>Learn</a></li><li><a class="widget-link" href="https://ministryoftesting.com/events" title="Events" target=""><svg class="fa d-icon d-icon-calendar-alt svg-icon svg-node" aria-hidden="true"><use xlink:href="#calendar-alt"></use></svg>Events</a></li><li><a class="widget-link" href="https://club.ministryoftesting.com" title="Discussions" target=""><svg class="fa d-icon d-icon-comments svg-icon svg-node" aria-hidden="true"><use xlink:href="#comments"></use></svg>Discussions</a></li><li><a class="widget-link" href="https://www.ministryoftesting.com/contribute" title="Contribute" target=""><svg class="fa d-icon d-icon-pencil-alt svg-icon svg-node" aria-hidden="true"><use xlink:href="#pencil-alt"></use></svg>Contribute</a></li></ul></div></div></div></header></div>
-  </div>
-</script>
-
 <script type="text/x-handlebars" data-template-name="components/categories-boxes">
   {{#each categories as |c|}}
     <div style={{unless noCategoryStyle (border-color c.color)}} data-category-id={{c.id}} data-notification-level={{c.notificationLevelString}} data-url={{c.url}}
@@ -175,80 +169,4 @@
       </div>
     </div>
   {{/each}}
-</script>
-
-<script>
-    let learn = `<use xlink:href="#graduation-cap">`
-    let events = `<use xlink:href="#calendar-alt">`
-    let contribute = `<use xlink:href="#pencil-alt">`
-
-    const div = document.createElement("div")
-    div.className = "sidebar-section-link-wrapper"
-    div.innerHTML = `
-            <a href="https://www.latranchee.com" class="sidebar-section-link sidebar-section-link-everything sidebar-row">
-              <span class="sidebar-section-link-prefix icon">
-                <svg class="logoIcon" xmlns="http://www.w3.org/2000/svg">${contribute}</svg>
-              </span>
-              <span class="sidebar-section-link-content-text"> Accueil </span>
-            </a>
-      `
-
-    const customHeader = document.createElement("div")
-    customHeader.className = "sidebar-section-wrapper sidebar-section-community"
-    customHeader.innerHTML = `
-            <div class="sidebar-section-header-wrapper sidebar-row">
-              <button id="ember11" class="sidebar-section-header sidebar-section-header-collapsable btn-flat no-text" type="button">
-                <span class="sidebar-section-header-text"> Ministry of Testing </span>
-              </button>
-          </div>
-          <ul class="sidebar-section-content" id="customNavigation"/>`
-
-    $(document).ready(function () {
-        // Create the links
-        const links = [
-            { title: "Learn", src: "https://ministryoftesting.com/learn", svg: learn, iconclass: "fa d-icon d-icon-graduation-cap svg-icon svg-node" },
-            { title: "Events", src: "https://ministryoftesting.com/events", svg: events, iconclass: "fa d-icon d-icon-calendar-alt svg-icon svg-node" },
-            { title: "Contribute", src: "https://ministryoftesting.com/contribute", svg: contribute, iconclass: "fa d-icon d-icon-pencil-alt svg-icon svg-node" },
-        ]
-
-        // Mobile
-        let hamburger = document.getElementById("toggle-hamburger-menu")
-        if (hamburger) {
-            hamburger.addEventListener("click", addCustomLinks)
-        } else {
-            addCustomLinks()
-        }
-
-        let bool = false;
-        function addCustomLinks() {
-            setTimeout(function () {
-                // Force to wait until navigation has been loaded
-                const sidebar = document.getElementsByClassName("sidebar-sections")[0]
-                if (sidebar) {
-                    sidebar.prepend(customHeader)
-                    if (bool) return;
-                    // Get the customNav Id
-                    const customNavigation = document.getElementById("customNavigation")
-                    if (customNavigation) {
-                        links.filter(function (link) {
-                            let linkDiv = document.createElement("li")
-                            linkDiv.className = "sidebar-section-link-wrapper"
-                            linkDiv.innerHTML = `<a href="${link.src}" class="sidebar-section-link sidebar-section-link-everything sidebar-row ember-view">
-                        <span class="sidebar-section-link-prefix icon" id="link_${link.title}"></span>
-                        <span class="sidebar-section-link-content-text"> ${link.title} </span>
-                    </a>
-                  `
-                            customNavigation.append(linkDiv)
-                            let linkIcon = document.getElementById("link_" + link.title)
-                            if (linkIcon && link.svg) {
-                                linkIcon.innerHTML = `<svg class="${link.iconclass}" xmlns="http://www.w3.org/2000/svg"> ${link.svg}</svg>`
-                            }
-                        })
-                    }
-                }
-                bool = true
-            }, 0)
-
-        }
-    })
 </script>
