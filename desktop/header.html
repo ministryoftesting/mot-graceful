@@ -2,28 +2,11 @@
 const { iconNode } = require("discourse-common/lib/icon-library");
 api.decorateWidget('header-icons:before', helper => {
     return helper.h('li', [
-        helper.h('a#home-button.icon', {
-            href:'https://www.ministryoftesting.com/',
-            title: 'Back to The Ministry of Testing Website'
-        }, iconNode('home', {class: 'home-button-icon'})),
-    ]);
-});
-api.decorateWidget('header-icons:before', helper => {
-    return helper.h('li', [
-        helper.h('a#slack-button.icon', {
-            href:'https://www.ministryoftesting.com/slack_invite',
-            title: 'Join Our Slack Group',
-            target: '_blank'
-        }, iconNode('fab-slack', {class: 'slack-button-icon'})),
-    ]);
-});
-api.decorateWidget('header-icons:before', helper => {
-    return helper.h('li', [
-        helper.h('a#paper-plane.icon', {
+        helper.h('a#circle-question.icon', {
             href:'https://help.ministryoftesting.com/collection/5-community',
             title: 'Get Support on How To Use The Club',
             target: '_blank'
-        }, iconNode('far-paper-plane', {class: 'paper-plane-icon'})),
+        }, iconNode('far-circle-question', {class: 'paper-plane-icon'})),
     ]);
 });
 </script>
