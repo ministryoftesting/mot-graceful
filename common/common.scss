@@ -46,12 +46,10 @@ tbody {
 }
 
 #main-outlet {
-  margin-top: 30px;
   margin-bottom: 50px;
   background: rgba($secondary, 0.95);
-  border-radius: 8px;
   max-width: 1200px;
-  padding: 3em 3em 5%;
+  padding: 1em 1em 5%;
   .archetype-regular & {
     min-height: 500px;
   }

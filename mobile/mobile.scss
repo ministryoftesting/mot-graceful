@@ -261,31 +261,6 @@ div#bottom-navbar-links a {
     padding-left: 20px;
 }
 
-.welcome-message {
-  background-color: var(--tertiary-low);
-}
-
-.welcome-message-container {
-  padding: 2rem;
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  
-  h1 {
-    font-weight: bolder;
-  }
-  
-  p {
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  button {
-    width: 70px;
-  }
-}
-
 .header-container {
   display: flex;
   flex-direction: column;
@@ -297,9 +272,4 @@ div#bottom-navbar-links a {
   margin-right: 3rem;
   display: flex;
   width: 100%;
-}
-
-.welcome-image {
-  width: 100%;
-  align-self: center;
 }
