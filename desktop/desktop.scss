@@ -50,7 +50,7 @@ img.avatar {
     right: 85px;
   }
   #site-logo {
-    max-height: 35px !important;
+    max-height: 3.8rem !important;
   }
 }
 
@@ -212,14 +212,22 @@ nav.post-controls {
 }
 
 .d-header {
-    background-color:#F0F0F0;
+    background-color:#18113c;
     height: 4em;
 }
 .d-header #site-logo {
     height: 3.8em;
 }
+
+.d-header .headerLink a{
+  color: white;
+}
 .d-header-icons .d-icon {
-    color: black;
+    color: white;
+}
+
+.header-sidebar-toggle button .d-icon{
+  color: white;
 }
 /*On scroll, change the post title colour so it is readable in the banner.*/
 .extra-info-wrapper .topic-link {
