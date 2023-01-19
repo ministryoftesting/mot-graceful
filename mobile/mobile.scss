@@ -274,3 +274,12 @@ div#bottom-navbar-links a {
   height: 3.8em;
   max-height: 3.8em;
 }
+
+#create-topic {
+  background-color: var(--quaternary);
+  color: var(--secondary);
+
+  .d-icon {
+    color: var(--secondary);
+  }
+}
