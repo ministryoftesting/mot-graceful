@@ -234,7 +234,7 @@ nav.post-controls {
 }
 /*On scroll, change the category/sub-category title colour so it is readable in the banner.*/
 .extra-info-wrapper .badge-wrapper.bullet span.badge-category, .extra-info-wrapper .badge-wrapper.bar span.badge-category, .extra-info-wrapper .badge-wrapper.none span.badge-category {
-    color: black;
+  color: var(--secondary)
 }
 .d-footer {
     background-color:#2C3E4F;
