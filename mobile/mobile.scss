@@ -193,11 +193,11 @@ div.cooked img:not(.thumbnail) {
 }
 /*On scroll, change the post title to white so it is readable in the banner.*/
 .extra-info-wrapper .topic-link {
-  color: black;
+  color: var(--secondary);
 }
 /*On scroll, change the category/sub-category title to white so it is readable in the banner.*/
 .extra-info-wrapper .badge-wrapper.bullet span.badge-category, .extra-info-wrapper .badge-wrapper.bar span.badge-category, .extra-info-wrapper .badge-wrapper.none span.badge-category {
-    color: black;
+    color: var(--secondary)
 }
 .d-footer {
     background-color:#2C3E4F;

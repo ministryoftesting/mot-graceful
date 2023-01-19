@@ -230,7 +230,7 @@ nav.post-controls {
 }
 /*On scroll, change the post title colour so it is readable in the banner.*/
 .extra-info-wrapper .topic-link {
-  color: black;
+  color: var(--secondary);
 }
 /*On scroll, change the category/sub-category title colour so it is readable in the banner.*/
 .extra-info-wrapper .badge-wrapper.bullet span.badge-category, .extra-info-wrapper .badge-wrapper.bar span.badge-category, .extra-info-wrapper .badge-wrapper.none span.badge-category {
