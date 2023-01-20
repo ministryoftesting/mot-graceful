@@ -576,13 +576,17 @@ nav.post-controls .actions .double-button button.has-like .d-icon {
 .topic-list-item.visited a.title:not(.badge-notification), .latest-topic-list-item.visited a.title:not(.badge-notification), .category-topic-link.visited a.title:not(.badge-notification) {
     color: #646464;
 }
+
+.category-boxes {
+  grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));
+}
 // Increase the contrast on the category box text description.
 .category-boxes .description {
     color: #646464;
 }
 
 .category-boxes .category-box {
-    width: 46%;
+    width: 100%;
     background-color: var(--primary-very-low);
     height: 160px;
     transition: all ease-out 0.2s;
@@ -651,4 +655,8 @@ nav.post-controls .actions .double-button button.has-like .d-icon {
 
 .category-details {
   align-self: center;
+}
+
+.category-boxes {
+  grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));
 }
