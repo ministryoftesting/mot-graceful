@@ -660,3 +660,7 @@ nav.post-controls .actions .double-button button.has-like .d-icon {
 .category-boxes {
   grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));
 }
+
+.topic-list .main-link.focused {
+  padding-left: 10px;
+}
