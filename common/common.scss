@@ -664,3 +664,13 @@ nav.post-controls .actions .double-button button.has-like .d-icon {
 .topic-list .main-link.focused {
   padding-left: 10px;
 }
+
+.search-widget .search-icon {
+  border: 1px solid var(--primary-medium);
+  border-radius: 0;
+
+  .d-icon-search {
+    height: 1.22em;
+    width: 1.22em;
+  }
+}
