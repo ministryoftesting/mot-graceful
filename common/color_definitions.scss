@@ -10,4 +10,5 @@ $gf-header-bg: dark-light-choose($header_background, $secondary-very-high);
       $primary-low,
       $primary-low-mid
     )};
+  --twitter: $twitter-or-white: dark-light-choose(unquote("#000"), unquote("#fff"));
 }
