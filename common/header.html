@@ -1,9 +1,9 @@
 <div class="background-container"></div>
 
-<script>
-  var TopicListComponent = require('discourse/components/topic-list').default;
-  TopicListComponent.reopen({
+<script type="text/discourse-plugin" version="0.8">
+  api.modifyClass("component:topic-list", {
     showLikes: true
+    pluginId: "mot-graceful"
   });
 </script>
 
