@@ -277,3 +277,13 @@ div#bottom-navbar-links a {
     color: var(--secondary);
   }
 }
+
+.has-full-page-chat .c-header {
+  .c-heading, .back-to-forum {
+    color: #FFFFFF;
+
+    .d-icon {
+      color: #FFFFFF;
+    }
+  }
+}
